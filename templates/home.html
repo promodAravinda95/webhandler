@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <h1 class="display-4">Welcome to MIS Team Web Portal</h1>
+    <p class="lead">This portal allows you to perform various tasks, such as converting Excel files to CSV format.</p>
+</div>
+
+<div class="card text-center">
+    <div class="card-body">
+        <h5 class="card-title">Convert Excel to Pipe-Delimited CSV</h5>
+        <p class="card-text">Upload your Excel file and convert it to CSV format separated by pipes.</p>
+        <a href="{{ url_for('upload') }}" class="btn btn-primary">Go to Upload Page</a>
+    </div>
+</div>
+{% endblock %}

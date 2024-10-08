@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Convert Excel to Pipe-Delimited CSV</h2>
+<p>Select an Excel file to convert:</p>
+
+<form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <input type="file" name="file" class="form-control-file" required>
+    </div>
+    <button type="submit" class="btn btn-success">Upload and Convert</button>
+</form>
+{% endblock %}
