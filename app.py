@@ -53,7 +53,10 @@ def upload():
 
 @app.route('/validate_plan', methods=['GET', 'POST'])
 def validate_plan():
-    clear_uploads_folder(UPLOAD_FOLDER)
+    if not os.path.exists(UPLOAD_FOLDER):
+        os.makedirs(UPLOAD_FOLDER)
+    else:
+        clear_uploads_folder(UPLOAD_FOLDER)
     if request.method == 'POST':
         if 'file' not in request.files:
             flash('No file part')
